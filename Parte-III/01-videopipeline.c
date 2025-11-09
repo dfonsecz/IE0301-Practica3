@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     loop = g_main_loop_new(NULL, FALSE);
 
     const gchar *pipeline_description =
-        "gst-launch-1.0 filesrc location=/opt/nvidia/deepstream/deepstream/samples/streams/sample_1080p_h264.mp4 ! \
+        "filesrc location=/opt/nvidia/deepstream/deepstream/samples/streams/sample_1080p_h264.mp4 ! \
          qtdemux ! h264parse ! nvv4l2decoder ! queue ! mux.sink_0 \
          nvstreammux name=mux width=1920 height=1080 batch-size=1 ! queue ! nvvideoconvert ! \
          nvinfer config-file-path=/opt/nvidia/deepstream/deepstream-6.0/samples/configs/deepstream-app/config_infer_primary.txt \
